@@ -1,0 +1,76 @@
+@active_color: #fed1b6;
+
+//淘宝初始化样式
+body, h1, h2, h3, h4, h5, h6, hr, p,blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input,textarea, th, td { margin:0; padding:0; }
+body, button, input, select, textarea {font:12px/1.5tahoma, arial, \5b8b\4f53; }
+address, cite, dfn, em, var {font-style:normal; }
+code, kbd, pre, samp {font-family:couriernew, courier, monospace; }
+small{ font-size:12px; }
+ul, ol { list-style:none; }
+a { text-decoration:none; }
+a:hover { text-decoration:underline; cursor: pointer;}
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea {font-size:100%; }
+table { border-collapse:collapse;border-spacing:0; }
+button{
+  &:focus{ outline: 0;}
+  &:hover{ cursor: pointer;}
+}
+
+*{
+  font-family: "Microsoft Sans Serif";
+}
+body,html{
+  height: 100%;
+  margin: 0px;
+}
+.btn-center{
+  margin: auto;
+}
+.btn-s{
+  width: auto;
+  height: 35px;
+  font-size: 16px;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.btn-m{
+  width: 150px;
+  height: 45px;
+  font-size: 16px;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+.btn-pink{
+  border: solid 1px #eea8b0;
+  border-radius: 5px;
+  background-color: rgba(255,255,255,0);
+  color: #eea8b0;
+  &:hover{
+    //background-color: rgba(255,255,255,0.2);
+    border: solid 1px #eea8b0;
+    background-color: #eea8b0;
+    color: white;
+  }
+}
+.btn-reika{
+  border: solid 1px #eee;
+  border-radius: 5px;
+  background-color: rgba(255,255,255,0);
+  color: #fff;
+  &:hover{
+    //background-color: rgba(255,255,255,0.2);
+    border: solid 1px @active_color;
+    color: @active_color;
+  }
+}
+.link_active{
+  color: @active_color;
+}
