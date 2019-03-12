@@ -149,5 +149,7 @@
         width: 100%;
         margin-bottom: 20px;
         margin-top: 10px;
+        padding-top: 6px;
+        padding-bottom: 6px;
     }
 </style>
