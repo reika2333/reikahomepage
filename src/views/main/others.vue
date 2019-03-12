@@ -4,7 +4,7 @@
         <p>这里是reika的个人空间，还有很多功能和模块的链接将要放在这里哦~敬请期待吧！</p>
 
         <button class="btn-m btn-reika btn-center" @click="toMyworks">我的作品</button>
-        <button class="btn-m btn-reika btn-center">绵绸睡衣</button>
+        <!--<button class="btn-m btn-reika btn-center">绵绸睡衣</button>-->
         <button class="btn-m btn-reika btn-center" @click="toAdmin">管理</button>
     </div>
 </template>

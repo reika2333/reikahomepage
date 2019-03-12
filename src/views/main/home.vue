@@ -2,7 +2,7 @@
     <div class="main_content">
         <h1>Hi Im Reika</h1>
         <p>This is Reika's homepage. <br>You can know me more here.</p>
-        <button class="btn-m btn-reika btn-center">我的简历</button>
+        <button class="btn-m btn-reika btn-center" @click="toResume">我的简历</button>
         <button class="btn-m btn-reika btn-center" @click="toMessage">留言</button>
     </div>
 </template>
@@ -13,6 +13,9 @@
         methods: {
             toMessage(){
                 window.location.href = '/message'
+            },
+            toResume(){
+                window.location.href = '/myWorks#/resume'
             }
         }
     }

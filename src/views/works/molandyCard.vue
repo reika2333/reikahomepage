@@ -1,3 +1,7 @@
+<!--
+    莫兰迪色卡.vue
+-->
+
 <template>
     <main class="main_content row">
         <header class="bg-m_0404"><h1>莫兰迪色系色卡</h1>molandy.less</header>
