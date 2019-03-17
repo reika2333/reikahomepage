@@ -22,11 +22,19 @@
 </script>
 
 <style scoped lang="less">
+    @media (min-width: 600px) {
+        .main_content{
+            width: 60%;
+        }
+    }
+    @media (max-width: 600px) {
+        .main_content{
+            width: 80%;
+        }
+    }
     .main_content{
-        width: 600px;
-        margin: 0px;
+        margin: auto;
         margin-top: 50px;
-        margin-left: 100px;
         text-align: center;
         color: white;
         h1{

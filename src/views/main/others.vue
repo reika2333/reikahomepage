@@ -24,8 +24,17 @@
 </script>
 
 <style scoped lang="less">
+    @media (min-width: 600px) {
+        .main_content{
+            width: 60%;
+        }
+    }
+    @media (max-width: 600px) {
+        .main_content{
+            width: 80%;
+        }
+    }
     .main_content{
-        width: 60%;
         margin: auto;
         margin-top: 50px;
         color: white;

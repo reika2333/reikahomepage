@@ -52,7 +52,6 @@
                     <h3>项目二：Reika的个人主页</h3>
                     <button class="btn-resume"><a href="https://github.com/reika2333/reikahomepage">源码链接</a></button>
                     <p>2019.01-2019.02 前端开发<br>
-                        项目链接：<br>
                         项目描述：vue+express实现的个人主页，包括留言、查看作品、查看简历等功能<br>
                         项目职责：<br>
                         1.  vue实现前端页面开发<br>
@@ -61,12 +60,13 @@
             </div>
         </div>
         <nav>
+            <div id="name">Reika</div>
             <ul>
-                <li id="name">Reika</li>
                 <li><a href="/">项目一</a></li>
                 <li><a href="http://114.115.168.82:8080/drp/">项目二</a></li>
-                <li id="back"><a href="/">返回主页</a></li>
+                <li id="back"></li>
             </ul>
+            <a href="/" id="back">返回主页</a>
         </nav>
     </div>
 </template>
@@ -78,160 +78,224 @@ export default {
 </script>
 
 <style scoped lang="less">
-@resume-btn-color: #c7b9c8;
-h3 {
-  line-height: 45px;
-  color: #8897a6;
-  font-family: "Yuanti SC";
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-}
-div,p {
-  margin: 0;
-  padding: 0;
-}
-a{
-    text-decoration: none;
-}
-p{
-    line-height: 25px;
-}
-.infobox {
-  border-radius: 8px;
-  box-shadow: 0px 0px 2px 0px #bbb;
-  background-color: white;
-  &:hover {
-    transform: scale(1.02);
-    box-shadow: 0px 0px 8px 1px #bbb;
-  }
-}
-.btn-resume {
-  padding: 6px;
-  /*background-color: ;*/
-  border-radius: 4px;
-  border: solid thin #c9bfd2;
-  a {
-    color: @resume-btn-color;
-  }
-  &:hover {
-    background-color: @resume-btn-color;
-    a {
-      color: white;
-    }
-  }
-}
-
-.body {
-  position: relative;
-  width: 100%;
-  min-width: 840px;
-  min-height: 100%;
-  background-color: #cac1d3;
-  background-image: url("../../img/img2resume01.jpg");
-  background-size: 100% auto;
-  background-repeat: repeat-y;
-  .container {
-    position: absolute;
-    width: 75%;
-    min-width: 800px;
-    left: 50%;
-    right: 50%;
-    transform: translateX(-50%);
-    height: 100%;
-    min-height: 100%;
-    overflow: scroll;
-    background-color: rgba(255, 255, 255, 0.4);
-    .main-content {
-      position: absolute;
-      width: 90%;
-      left: 50%;
-      right: 50%;
-      transform: translateX(-50%);
-      top: 100px;
-      overflow: auto;
-      color: #444;
-      padding: 15px;
-      .basicinfo {
-        float: left;
-        width: 100%;
-        overflow: auto;
-        margin-bottom: 15px;
-        padding: 20px;
-        padding-left: 35px;
-        .inleft {
-          float: left;
-          /*padding: 20px;*/
-          /*padding-left: 35px;*/
-          width: 30%;
-          text-align: left;
-        }
-        .inright {
-          float: left;
-          /*padding: 20px;*/
-          /*padding-left: 35px;*/
-          width: 70%;
-          text-align: left;
-        }
-        button {
-          float: right;
-            margin-left: 8px;
-        }
-      }
-    }
-    .hiddenbox {
-      position: absolute;
-      width: 100%;
-      height: 80px;
-      top: 80px;
-      background: linear-gradient(
-        rgba(255, 255, 255, 0.8),
-        rgba(255, 255, 255, 0)
-      );
-      visibility: hidden;
-    }
-  }
-  nav {
-    position: absolute;
-    top: 20px;
-    height: 60px;
-    width: 78%;
-    min-width: 840px;
-    left: 50%;
-    right: 50%;
-    transform: translateX(-50%);
-
-    border: solid thin white;
-    border-radius: 8px;
-    box-shadow: 0px 0px 8px 0px #bbb;
-
-    /*background: linear-gradient(to right,#f4dfe8,#e6eaed);*/
-    background-color: #fff;
-    ul {
+    @resume-btn-color: #c7b9c8;
+    h3 {
+      line-height: 45px;
+      color: #8897a6;
+      font-family: "Yuanti SC";
+      display: inline-block;
       margin: 0;
-      height: 60px;
-      margin-left: 30px;
-      li {
-        display: inline-block;
-          padding: 0;
-        padding-left: 10px;
-        padding-right: 10px;
-          line-height: 60px;
-        a{
-            color: #8897a6;
-            /*display: inline-block;*/
+      padding: 0;
+    }
+    div,p {
+      margin: 0;
+      padding: 0;
+    }
+    a{
+        text-decoration: none;
+    }
+    p{
+        line-height: 25px;
+    }
+    .infobox {
+      border-radius: 8px;
+      box-shadow: 0px 0px 2px 0px #bbb;
+      background-color: white;
+      &:hover {
+        transform: scale(1.02);
+        box-shadow: 0px 0px 8px 1px #bbb;
+      }
+    }
+    .btn-resume {
+      padding: 6px;
+      /*background-color: ;*/
+      border-radius: 4px;
+      border: solid thin #c9bfd2;
+      a {
+        color: @resume-btn-color;
+      }
+    }
+
+    .body {
+      position: relative;
+      width: 100%;
+      min-width: 840px;
+      min-height: 100%;
+      background-color: #cac1d3;
+      background-image: url("../../img/img2resume01.jpg");
+      background-size: 100% auto;
+      background-repeat: repeat-y;
+      .container {
+        position: absolute;
+        width: 75%;
+        min-width: 800px;
+        left: 50%;
+        right: 50%;
+        transform: translateX(-50%);
+        height: 100%;
+        min-height: 100%;
+        overflow: scroll;
+        background-color: rgba(255, 255, 255, 0.4);
+        .main-content {
+          position: absolute;
+          width: 90%;
+          left: 50%;
+          right: 50%;
+          transform: translateX(-50%);
+          top: 100px;
+          overflow: auto;
+          color: #444;
+          padding: 15px;
+          .basicinfo {
+            float: left;
+            width: 100%;
+            overflow: auto;
+            margin-bottom: 15px;
+            padding: 20px;
+            padding-left: 35px;
+            .inleft {
+              float: left;
+              /*padding: 20px;*/
+              /*padding-left: 35px;*/
+              width: 30%;
+              text-align: left;
+            }
+            .inright {
+              float: left;
+              /*padding: 20px;*/
+              /*padding-left: 35px;*/
+              width: 70%;
+              text-align: left;
+            }
+            button {
+              float: right;
+                margin-left: 8px;
+            }
+          }
+        }
+        .hiddenbox {
+          position: absolute;
+          width: 100%;
+          height: 80px;
+          top: 80px;
+          background: linear-gradient(
+            rgba(255, 255, 255, 0.8),
+            rgba(255, 255, 255, 0)
+          );
+          visibility: hidden;
         }
       }
-        #name{
-            font-size: 24px;
-            font-family: "Yuanti SC";
-            color: #bc7cab;
-        }
-        #back{
+      nav {
+        position: absolute;
+        top: 20px;
+        height: 60px;
+        width: 78%;
+        min-width: 840px;
+        left: 50%;
+        right: 50%;
+        transform: translateX(-50%);
+
+        border: solid thin white;
+        border-radius: 8px;
+        box-shadow: 0px 0px 8px 0px #bbb;
+
+        /*background: linear-gradient(to right,#f4dfe8,#e6eaed);*/
+        background-color: #fff;
+          #name{
+              display: inline-block;
+              font-size: 28px;
+              font-family: "Yuanti SC";
+              color: #bc7cab;
+              margin-left: 30px;
+              line-height: 60px;
+          }
+        ul {
             position: absolute;
-            right: 20px;
+            display: inline-block;
+          margin: 0;
+          line-height: 60px;
+          li {
+            display: inline-block;
+              padding: 0;
+            padding-left: 10px;
+            padding-right: 10px;
+              /*line-height: 60px;*/
+            a{
+                color: #8897a6;
+            }
+          }
+        }
+          #back{
+              position: absolute;
+              right: 20px;
+              line-height: 60px;
+              color: #8897a6;
+          }
+      }
+    }
+    @media (max-width: 600px) {
+        .body{
+            position: absolute;
+            min-width: 0;
+            width: 100%;
+            height: 100%;
+            background-size: auto 100%;
+            overflow: hidden;
+            .container{
+                min-width: 0;
+                width: 100%;
+                .main-content{
+                    top: 85px;
+                    padding: 0;
+                    .basicinfo{
+                        padding: 16px;
+                        .inleft{
+                            width: 100%;
+                        }
+                        .inright{
+                            width: 100%;
+                        }
+                        button{
+                            float: none;
+                            margin: 4px 8px 4px 0;
+                            background-color: white;
+                        }
+                    }
+                }
+            }
+            nav{
+                min-width: 0;
+                height: 45px;
+                width: 98%;
+                #name{
+                    line-height: 45px;
+                    margin-left: 18px;
+                }
+                ul{
+                    line-height: 45px;
+                    li{
+                        /*line-height: 45px;*/
+                    }
+                }
+                #back{
+                    line-height: 45px;
+                }
+            }
+        }
+        h3{
+            font-size: 16px;
+            line-height: 28px;
+            display: block;
         }
     }
-  }
-}
+    @media (min-width: 600px) {
+        .btn-resume{
+            &:hover {
+                background-color: @resume-btn-color;
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
 </style>

@@ -1,15 +1,15 @@
 <template>
-    <div class="content">
+    <div class="main_content">
         <!--返回主页-->
         <button class="btn-s btn-pink" @click="toHome" style="margin-top: 0"> < 返回主页</button>
         <!--提交留言的form表单-->
         <form>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="name" v-model="name">
+            <div class="form-group-reika">
+                <input type="text" class="ipt-reika" placeholder="name" v-model="name">
                 <div v-if="namehint" class="hint">您还没有填写昵称呢</div>
             </div>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="message" v-model="message">
+            <div class="form-group-reika">
+                <input type="text" class="ipt-reika" placeholder="message" v-model="message">
                 <div v-if="messagehint" class="hint">还没雨留言内容呢</div>
             </div>
             <button type="button" class="btn-s btn-pink btn-center" @click="send">send</button>
@@ -118,15 +118,23 @@
 </script>
 
 <style scoped lang="less">
-    .content{
+    .main_content{
         height: 100%;
         background-color: rgba(255,255,255,0.2);
         padding: 20px;
+        position: relative;
+        top: 0;
+        bottom: 0;
+        button:first-child{
+            margin-left: 5px;
+        }
         .msgbord{
-            width: 100%;
-            margin-top: 20px;
-            height: 37em;
+            height: 65%;
+            /*position: relative;*/
+            top: 0;
+            bottom: 0;
             overflow: auto;
+            padding: 20px;
             padding-bottom: 26px;
             ul{
                 padding-left: 0;
@@ -153,19 +161,48 @@
     }
     @active_color: #fed1b6;
     @pink_color: #eea8b0;
-    input{
-        background-color: rgba(255,255,255,0);
-        border: solid 1px @pink_color;
-        box-shadow: none;
-        color: #ca788a;
+    
+    @media (max-width: 600px) {
+        *{
+            font-size: 14px;
+        }
+        .main_content{
+            padding: 15px;
+            button{
+                margin-bottom: 10px;
+            }
+            form{
+                button{
+                    margin-top: 5px;
+                }
+            }
+        }
     }
-    .form-control:focus{
-        color: #495057;
-        background-color: rgba(255,255,255,1);
-        border: solid 1px @pink_color;
-        box-shadow: 0 0 0 0.2em rgba(238,168,176,0.25);
-        outline: 0;
+
+    .form-group-reika{
+        padding: 5px;
+        .ipt-reika{
+            box-sizing: border-box;
+            width: 100%;
+            height: 35px;
+            padding-left: 8px;
+
+            background-color: rgba(255,255,255,0);
+            border-radius: 5px;
+            border: solid 1px @pink_color;
+            box-shadow: none;
+            color: #ca788a;
+            &:focus{
+                color: #495057;
+                background-color: rgba(255,255,255,1);
+                border: solid 1px @pink_color;
+                box-shadow: 0 0 0 0.2em rgba(238,168,176,0.25);
+                outline: 0;
+            }
+        }
     }
+
+
     .hint{
         color: red;
     }
