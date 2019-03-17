@@ -101,10 +101,6 @@ export default {
       border-radius: 8px;
       box-shadow: 0px 0px 2px 0px #bbb;
       background-color: white;
-      &:hover {
-        transform: scale(1.02);
-        box-shadow: 0px 0px 8px 1px #bbb;
-      }
     }
     .btn-resume {
       padding: 6px;
@@ -296,6 +292,10 @@ export default {
                     color: white;
                 }
             }
+        }
+        .infobox:hover {
+            transform: scale(1.02);
+            box-shadow: 0px 0px 8px 1px #bbb;
         }
     }
 </style>
