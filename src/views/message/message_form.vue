@@ -6,11 +6,11 @@
         <form>
             <div class="form-group-reika">
                 <input type="text" class="ipt-reika" placeholder="name" v-model="name">
-                <div v-if="namehint" class="hint">您还没有填写昵称呢</div>
+                <div v-if="nameHint" class="hint">您还没有填写昵称呢</div>
             </div>
             <div class="form-group-reika">
                 <input type="text" class="ipt-reika" placeholder="message" v-model="message">
-                <div v-if="messagehint" class="hint">还没雨留言内容呢</div>
+                <div v-if="messageHint" class="hint">还没有留言内容呢</div>
             </div>
             <button type="button" class="btn-s btn-pink btn-center" @click="send">send</button>
         </form>
@@ -34,9 +34,9 @@
         data: function () {
             return{
                 name: '',
-                namehint: 0,
+                nameHint: 0,
                 message: '',
-                messagehint: 0,
+                messageHint: 0,
                 messages: []
             }
         },
@@ -44,17 +44,17 @@
             // 发送留言，将填写的留言写入数据库
             send(){
                 // 首先判断内容是否为空
-                if(this.name == ''){
-                    return this.namehint = 1
+                if(!!this.name){
+                    return this.nameHint = 1
                 }else {
-                    this.namehint = 0
+                    this.nameHint = 0
                 }
                 if(this.message == ''){
-                    return this.messagehint = 1
+                    return this.messageHint = 1
                 }else {
-                    this.messagehint = 0
+                    this.messageHint = 0
                 }
-                var messageObject = {
+                const messageObject = {
                     name: this.name,
                     message: this.message
                 }

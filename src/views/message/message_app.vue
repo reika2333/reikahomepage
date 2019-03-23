@@ -97,12 +97,10 @@
                 padding: 0;
                 img{
                     position: absolute;
-                    height: 100%;
-                    width: auto;
+                    width: 135%;
+                    height: auto;
+                    top: 0px;
                     opacity: 0.5;
-                    /*top: 50%;*/
-                    /*bottom: 50%;*/
-                    /*transform: translateY(-50%);*/
                 }
             }
         }
